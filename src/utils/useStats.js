@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
 import Axios from 'axios';
 
-const useStats = id => {
+const ROOT_URL = 'https://covid19.mathdro.id/api';
+
+const useStats = (url = '') => {
   const [stats, setStats] = useState(null);
 
   useEffect(() => {
     (async () => {
       console.log('fetching data');
-      const response = await Axios.get(
-        `https://covid19.mathdro.id/api/countries/${id}`
-      );
+      const response = await Axios.get(`${ROOT_URL}/${url}`);
       setStats(response.data);
     })();
-  }, [id]);
+  }, []);
 
   return stats;
 };
