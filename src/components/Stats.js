@@ -3,7 +3,6 @@ import useStats from '../utils/useStats';
 
 const Stats = ({ url }) => {
   const stats = useStats(url);
-  console.log(stats);
 
   if (!stats) return <p>Loading...</p>;
 

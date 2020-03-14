@@ -24,7 +24,6 @@ const CountrySelector = () => {
         </div>
         <select
           onChange={e => {
-            console.log(e.target.value);
             setSelectedCountry(e.target.value);
           }}
           value={selectedCountry}
