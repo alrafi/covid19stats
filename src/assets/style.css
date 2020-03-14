@@ -37,3 +37,12 @@ body {
   font-size: 80%;
   margin-bottom: 10px;
 }
+
+/* country info */
+.country__info {
+  display: flex;
+}
+
+.country__info img {
+  border-radius: 50%;
+}
