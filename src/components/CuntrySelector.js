@@ -10,7 +10,7 @@ const CountrySelector = () => {
   if (!listCountries) return <p>Loading...</p>;
 
   return (
-    <div>
+    <div className="country__showing">
       <div className="country">
         <div className="country__info">
           <ReactCountryFlag
