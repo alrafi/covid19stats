@@ -9,15 +9,15 @@ const Stats = ({ url }) => {
 
   return (
     <div className="stats__container">
-      <div className="box">
+      <div className="box confirmed">
         <p>Confirmed</p>
         <h3>{stats.confirmed.value}</h3>
       </div>
-      <div className="box">
+      <div className="box recovered">
         <p>Recovered</p>
         <h3>{stats.recovered.value}</h3>
       </div>
-      <div className="box">
+      <div className="box deaths">
         <p>Deaths</p>
         <h3>{stats.deaths.value}</h3>
       </div>

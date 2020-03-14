@@ -10,17 +10,30 @@ html {
 body {
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
-  background-color: #fefefe;
+  background-color: #eae9e9;
 }
 
 .container {
   margin: 20px;
-  border: 1px solid black;
+  border-radius: 20px;
+  background-color: #f6f6f6;
+  padding: 10px;
+  height: 100vh;
+}
+
+.container h1 {
+  font-size: 120%;
+  text-align: center;
+  margin: 10px 0;
 }
 
 .stats__container {
   display: flex;
   justify-content: space-between;
+}
+
+.stats__container p {
+  text-transform: uppercase;
 }
 
 .box {
@@ -34,15 +47,57 @@ body {
 }
 
 .box p {
-  font-size: 80%;
-  margin-bottom: 10px;
+  font-size: 70%;
+  margin: 5px 0;
+}
+
+.confirmed p {
+  background-color: #f7be16;
+}
+
+.recovered p {
+  background-color: #36622b;
+  color: #f6f6f6;
+}
+
+.recovered h3 {
+  color: #36622b;
+}
+
+.deaths p {
+  background-color: #db2d43;
+  color: #f6f6f6;
+}
+
+.deaths h3 {
+  color: #db2d43;
 }
 
 /* country info */
+.country {
+  display: flex;
+  margin: 10px;
+}
+
 .country__info {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
 }
 
 .country__info img {
   border-radius: 50%;
+  margin-right: 5px;
+}
+
+.country__select {
+  width: 40%;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.country__select:focus {
+  outline: none;
 }
