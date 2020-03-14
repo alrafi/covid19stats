@@ -1,6 +1,12 @@
 import React from 'react';
+import useStats from '../utils/useStats';
 
-const Stats = ({ stats }) => {
+const Stats = ({ url }) => {
+  const stats = useStats(url);
+  console.log(stats);
+
+  if (!stats) return <p>Loading...</p>;
+
   return (
     <div>
       <h3>Confirmed:</h3>

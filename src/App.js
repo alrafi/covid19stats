@@ -1,12 +1,13 @@
 import React from 'react';
 import GlobalStats from './components/GlobalStats';
-import DailyStats from './components/DailyStats';
+// import DailyStats from './components/DailyStats';
+import CountrySelector from './components/CuntrySelector';
 
 const App = () => {
   return (
     <div>
       <GlobalStats></GlobalStats>
-      <DailyStats></DailyStats>
+      <CountrySelector></CountrySelector>
     </div>
   );
 };

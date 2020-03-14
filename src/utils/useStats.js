@@ -12,7 +12,7 @@ const useStats = (url = '') => {
       const response = await Axios.get(`${ROOT_URL}/${url}`);
       setStats(response.data);
     })();
-  }, []);
+  }, [url]);
 
   return stats;
 };
