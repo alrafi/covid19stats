@@ -6,14 +6,15 @@ const useStats = id => {
 
   useEffect(() => {
     (async () => {
+      console.log('fetching data');
       const response = await Axios.get(
         `https://covid19.mathdro.id/api/countries/${id}`
       );
-
-      console.log(response.data);
       setStats(response.data);
     })();
-  }, stats);
+  }, [id]);
+
+  return stats;
 };
 
 export default useStats;
