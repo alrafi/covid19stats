@@ -8,7 +8,6 @@ const useStats = (url = '') => {
 
   useEffect(() => {
     (async () => {
-      console.log('fetching data');
       const response = await Axios.get(`${ROOT_URL}/${url}`);
       setStats(response.data);
     })();
