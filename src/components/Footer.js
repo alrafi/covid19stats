@@ -10,7 +10,7 @@ const Footer = () => {
     <footer>
       <p>Last update: {stats.lastUpdate}</p>
       <p>#StayAtHome. With ❤️ by hafisalrafi</p>
-      <p>Data from API @mathroid</p>
+      <p>Data from API @mathdroid</p>
     </footer>
   );
 };
