@@ -8,8 +8,12 @@ const useStats = (url = '') => {
 
   useEffect(() => {
     (async () => {
-      const response = await Axios.get(`${ROOT_URL}/${url}`);
-      setStats(response.data);
+      try {
+        const response = await Axios.get(`${ROOT_URL}/${url}`);
+        setStats(response.data);
+      } catch (err) {
+        setStats('N/A');
+      }
     })();
   }, [url]);
 
