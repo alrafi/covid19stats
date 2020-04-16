@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import useStats from '../utils/useStats';
-import Stats from './Stats';
 import ReactCountryFlag from 'react-country-flag';
 import styled from 'styled-components';
 
@@ -8,7 +7,6 @@ const CountryShowing = styled.div`
   border: 1px solid #99a6c0;
   border-radius: 100px;
   padding: 0 10px;
-  /* margin: 0 20px; */
 `;
 
 const CountryWrapper = styled.div`
@@ -33,7 +31,6 @@ const CountrySelect = styled.select`
   padding: 5px;
   border: none;
   font-size: 80%;
-  /* border-radius: 10px; */
   background-color: transparent;
   outline: none;
 `;
@@ -46,7 +43,6 @@ const CountrySelector = (props) => {
   console.log(listCountries.countries);
 
   return (
-    // console.loh(listCountries);
     <CountryShowing>
       <CountryWrapper>
         <CountryInfo>
@@ -74,7 +70,6 @@ const CountrySelector = (props) => {
           ))}
         </CountrySelect>
       </CountryWrapper>
-      {/* <Stats url={`countries/${selectedCountry}`} /> */}
     </CountryShowing>
   );
 };
