@@ -3,6 +3,9 @@ import StatsContainer from './components/StatsContainer';
 import Header from './components/Header';
 import styled from 'styled-components';
 import './assets/style.css';
+import virusIcon from './assets/virus_icon.svg';
+import pillIcon from './assets/pill_icon.svg';
+import hospitalIcon from './assets/hospital_icon.svg';
 
 const AppContainer = styled.div`
   margin: 20px;
@@ -33,6 +36,11 @@ const MenuBar = styled.div`
   right: 20px;
   margin: 20px 0;
   z-index: 999;
+  display: flex;
+  justify-content: space-around;
+  img {
+    width: 20px;
+  }
 
   @media (min-width: 431px) {
     width: 370px;
@@ -56,7 +64,11 @@ const App = () => {
       <Header></Header>
       <StatsContainer></StatsContainer>
       <BackgroundMenuBar>
-        <MenuBar></MenuBar>
+        <MenuBar>
+          <img src={virusIcon} alt="Home" style={{ filter: 'invert(88%) sepia(92%) saturate(6410%) hue-rotate(137deg) brightness(77%) contrast(77%)' }} />
+          <img src={pillIcon} alt="Info" />
+          <img src={hospitalIcon} alt="Hotline" />
+        </MenuBar>
       </BackgroundMenuBar>
     </AppContainer>
   );
