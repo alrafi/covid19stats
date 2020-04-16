@@ -40,7 +40,7 @@ const CountrySelector = (props) => {
   const [selectedCountry, setSelectedCountry] = useState('ID');
 
   if (!listCountries) return <p>Loading...</p>;
-  console.log(listCountries.countries);
+  // console.log(listCountries.countries);
 
   return (
     <CountryShowing>

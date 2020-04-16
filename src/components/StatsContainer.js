@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Stats from './Stats';
 import CountrySelector from './CuntrySelector';
+import StatsProvince from './StatsProvince';
 import Footer from './Footer';
 import styled from 'styled-components';
 import useStats from '../utils/useStats';
@@ -32,7 +33,7 @@ const StatsContainer = () => {
   if (!stats) return <p>Loading...</p>;
 
   const onCountrySelect = (selectedCountry) => {
-    console.log(selectedCountry);
+    // console.log(selectedCountry);
     setSelectedCountry(selectedCountry);
   };
 
@@ -44,6 +45,7 @@ const StatsContainer = () => {
         <p>Last Update: {stats.lastUpdate.substring(0, 10)}</p>
         <Stats url={`countries/${selectedCountry}`}></Stats>
       </StatsUpdate>
+      <StatsProvince></StatsProvince>
       <Footer></Footer>
     </StatsWrapper>
   );
