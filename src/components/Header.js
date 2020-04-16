@@ -5,19 +5,22 @@ import header from '../assets/header.png';
 const HeaderWrapper = styled.div`
   height: 320px;
   background-image: url(${header});
-  border-radius: 20px;
-  padding-top: 20px;
-  /* position: absolute; */
+  border-radius: 40px;
+  padding-top: 70px;
+  padding-left: 40px;
+  font-size: 80%;
 `;
 
 const HeaderText = styled.h1`
   margin: 0;
+  width: 160px;
 `;
 
 const Header = () => {
   return (
     <HeaderWrapper>
-      <HeaderText>COVID-19 STATS</HeaderText>
+      <HeaderText>COVID-19</HeaderText>
+      <HeaderText>Stats</HeaderText>
     </HeaderWrapper>
   );
 };
