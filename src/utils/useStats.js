@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import Axios from 'axios';
 
-const ROOT_URL = 'https://covid19.mathdro.id/api';
+// const ROOT_URL = 'https://covid19.mathdro.id/api';
+// kwalcorona: https://api.kawalcorona.com/indonesia/provinsi/
 
-const useStats = (url = '') => {
+const useStats = (url = '', ROOT_URL = 'https://covid19.mathdro.id/api') => {
   const [stats, setStats] = useState(null);
 
   useEffect(() => {
@@ -15,7 +16,7 @@ const useStats = (url = '') => {
         setStats('N/A');
       }
     })();
-  }, [url]);
+  }, [url, ROOT_URL]);
 
   return stats;
 };
