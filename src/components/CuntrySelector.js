@@ -8,8 +8,10 @@ const CountrySelector = () => {
   const [selectedCountry, setSelectedCountry] = useState('ID');
 
   if (!listCountries) return <p>Loading...</p>;
+  console.log(listCountries.countries);
 
   return (
+    // console.loh(listCountries);
     <div className="country__showing">
       <div className="country">
         <div className="country__info">
@@ -23,15 +25,15 @@ const CountrySelector = () => {
           <p>{selectedCountry}</p>
         </div>
         <select
-          onChange={e => {
+          onChange={(e) => {
             setSelectedCountry(e.target.value);
           }}
           value={selectedCountry}
           className="country__select"
         >
-          {Object.entries(listCountries.countries).map(([country, code]) => (
-            <option key={code} value={code}>
-              {country}
+          {listCountries.countries.map((country) => (
+            <option key={country.name} value={country.iso2}>
+              {country.name}
             </option>
           ))}
         </select>
