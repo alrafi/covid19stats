@@ -9,7 +9,13 @@ const Footer = () => {
   return (
     <footer>
       <p>Last update: {stats.lastUpdate}</p>
-      <p>#StayAtHome. With ❤️ by hafisalrafi</p>
+      <p>
+        #StayAtHome. With{' '}
+        <span role="img" aria-label="love">
+          ❤️
+        </span>{' '}
+        by hafisalrafi
+      </p>
       <p>Data from API @mathdroid</p>
     </footer>
   );
