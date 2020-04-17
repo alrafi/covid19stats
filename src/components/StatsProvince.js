@@ -7,6 +7,10 @@ const ProvWrapper = styled.div`
   height: 300px;
   margin-top: 20px;
   overflow: auto;
+
+  h3 {
+    font-size: 100%;
+  }
 `;
 
 const THead = styled.div`
@@ -24,6 +28,8 @@ const TBody = styled.div`
   justify-content: space-between;
   background-color: #ffffff;
   margin-bottom: 5px;
+  padding: 5px 0;
+  border-radius: 5px;
 
   p {
     font-size: 50%;
@@ -54,6 +60,7 @@ const StatsProvince = () => {
 
   return (
     <ProvWrapper>
+      <h3>Province Cases (Indonesia Only)</h3>
       <THead>
         <p>Province</p>
         <p>Confirmed</p>
