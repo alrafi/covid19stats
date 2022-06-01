@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import useStats from '../utils/useStats';
-import ReactCountryFlag from 'react-country-flag';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import useStats from "../utils/useStats";
+import ReactCountryFlag from "react-country-flag";
+import styled from "styled-components";
 
 const CountryShowing = styled.div`
   border: 1px solid #99a6c0;
@@ -36,11 +36,10 @@ const CountrySelect = styled.select`
 `;
 
 const CountrySelector = (props) => {
-  const listCountries = useStats('countries');
-  const [selectedCountry, setSelectedCountry] = useState('ID');
+  const listCountries = useStats("countries");
+  const [selectedCountry, setSelectedCountry] = useState("ID");
 
   if (!listCountries) return <p>Loading...</p>;
-  // console.log(listCountries.countries);
 
   return (
     <CountryShowing>

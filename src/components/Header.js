@@ -1,14 +1,18 @@
-import React from 'react';
-import styled from 'styled-components';
-import header from '../assets/header.png';
+import React from "react";
+import styled from "styled-components";
+import header from "../assets/bg-covid.jpg";
 
 const HeaderWrapper = styled.div`
-  height: 320px;
+  height: 30vh;
   background-image: url(${header});
-  border-radius: 40px;
-  padding-top: 70px;
-  padding-left: 40px;
-  font-size: 80%;
+  padding: 20px 15px;
+  font-size: 60%;
+  background-size: cover;
+
+  @media (min-width: 425px) {
+    padding: 60px 40px;
+    font-size: 80%;
+  }
 `;
 
 const HeaderText = styled.h1`

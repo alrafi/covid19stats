@@ -1,9 +1,11 @@
-import React from 'react';
-import useStats from '../utils/useStats';
-import styled from 'styled-components';
-import confirmedIcon from '../assets/confirmed_icon.png';
-import recoveredIcon from '../assets/recovered_icon.png';
-import deathIcon from '../assets/death_icon.png';
+import React from "react";
+import useStats from "../utils/useStats";
+import styled from "styled-components";
+import confirmedIcon from "../assets/confirmed_icon.png";
+import recoveredIcon from "../assets/recovered_icon.png";
+import deathIcon from "../assets/death_icon.png";
+
+import Loader from "react-loader-spinner";
 
 const StatsWrapper = styled.div`
   display: flex;
@@ -29,8 +31,12 @@ const BoxStats = styled.div`
 
   h3 {
     color: ${(props) => props.color};
-    font-size: 120% !important;
+    font-size: 80% !important;
     margin: 3px 0;
+
+    @media (min-width: 425px) {
+      font-size: 100% !important;
+    }
   }
 
   img {
@@ -41,23 +47,35 @@ const BoxStats = styled.div`
 const Stats = ({ url }) => {
   const stats = useStats(url);
 
-  if (!stats) return <p>Loading...</p>;
+  if (!stats) {
+    return (
+      <StatsWrapper>
+        <Loader
+          type="Oval"
+          color="#00BFFF"
+          height={40}
+          width={40}
+          style={{ marginTop: "10px", textAlign: "center" }}
+        />
+      </StatsWrapper>
+    );
+  }
 
   return (
     <StatsWrapper>
       <BoxStats color="#FF9E6B">
         <img src={confirmedIcon} alt="confirmed" />
-        <h3>{stats !== 'N/A' ? stats.confirmed.value : 'N/A'}</h3>
+        <h3>{stats !== "N/A" ? stats.confirmed.value : "N/A"}</h3>
         <p>Confirmed</p>
       </BoxStats>
       <BoxStats color="#45D07C">
         <img src={recoveredIcon} alt="recovered" />
-        <h3>{stats !== 'N/A' ? stats.recovered.value : 'N/A'}</h3>
+        <h3>{stats !== "N/A" ? stats.recovered.value : "N/A"}</h3>
         <p>Recovered</p>
       </BoxStats>
       <BoxStats color="#F34B4B">
         <img src={deathIcon} alt="death" />
-        <h3>{stats !== 'N/A' ? stats.deaths.value : 'N/A'}</h3>
+        <h3>{stats !== "N/A" ? stats.deaths.value : "N/A"}</h3>
         <p>Deaths</p>
       </BoxStats>
     </StatsWrapper>

@@ -1,16 +1,14 @@
-import React, { useState } from 'react';
-import Stats from './Stats';
-import CountrySelector from './CuntrySelector';
-import StatsProvince from './StatsProvince';
-import Footer from './Footer';
-import styled from 'styled-components';
-import useStats from '../utils/useStats';
+import React, { useState } from "react";
+import Stats from "./Stats";
+import CountrySelector from "./CuntrySelector";
+import Footer from "./Footer";
+import styled from "styled-components";
+import useStats from "../utils/useStats";
 
 const StatsWrapper = styled.div`
   padding: 20px 15px;
-  margin-top: -60px;
   background: linear-gradient(180deg, #ffffff 0%, #edffff 100%);
-  border-radius: 40px;
+  height: 80vh;
 `;
 
 const StatsUpdate = styled.div`
@@ -27,13 +25,12 @@ const StatsUpdate = styled.div`
 `;
 
 const StatsContainer = () => {
-  const [selectedCountry, setSelectedCountry] = useState('ID');
+  const [selectedCountry, setSelectedCountry] = useState("ID");
   const stats = useStats();
 
   if (!stats) return <p>Loading...</p>;
 
   const onCountrySelect = (selectedCountry) => {
-    // console.log(selectedCountry);
     setSelectedCountry(selectedCountry);
   };
 
@@ -45,7 +42,6 @@ const StatsContainer = () => {
         <p>Last Update: {stats.lastUpdate.substring(0, 10)}</p>
         <Stats url={`countries/${selectedCountry}`}></Stats>
       </StatsUpdate>
-      <StatsProvince></StatsProvince>
       <Footer></Footer>
     </StatsWrapper>
   );

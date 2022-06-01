@@ -9,7 +9,6 @@ const useStats = (url = "", ROOT_URL = "https://covid19.mathdro.id/api") => {
 
   useEffect(() => {
     (async () => {
-      setStats("");
       try {
         let apiUrl = "";
         if (url) {
@@ -17,10 +16,16 @@ const useStats = (url = "", ROOT_URL = "https://covid19.mathdro.id/api") => {
         } else {
           apiUrl = ROOT_URL;
         }
-        const response = await Axios.get(apiUrl);
+        const response = await Axios.get(apiUrl, {
+          headers: {
+            "Access-Control-Allow-Origin": "http://localhost:3000",
+            // "Access-Control-Allow-Credentials": "true",
+          },
+        });
+        console.log("RESPONSE", response);
         setStats(response.data);
       } catch (err) {
-        console.log("Error: ", err);
+        console.log("ERROR", err);
         setStats("N/A");
       }
     })();

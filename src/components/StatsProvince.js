@@ -1,7 +1,7 @@
-import React from 'react';
-import useStats from '../utils/useStats';
-import styled from 'styled-components';
-import Loader from 'react-loader-spinner';
+import React from "react";
+import useProv from "../utils/useProv";
+import styled from "styled-components";
+import Loader from "react-loader-spinner";
 
 const ProvWrapper = styled.div`
   height: 300px;
@@ -41,21 +41,20 @@ const ProvName = styled.p`
 `;
 
 const StatsProvince = () => {
-  const stats = useStats(
-    'provinsi',
-    'https://cors-anywhere.herokuapp.com/https://api.kawalcorona.com/indonesia'
-  );
+  const stats = useProv("", "https://data.covid19.go.id/public/api/prov.json");
+  console.log("sINI", stats);
 
-  if (!stats)
+  if (!stats || stats === "N/A") {
     return (
       <Loader
         type="Oval"
         color="#00BFFF"
         height={40}
         width={40}
-        style={{ marginTop: '10px', textAlign: 'center' }}
+        style={{ marginTop: "10px", textAlign: "center" }}
       />
     );
+  }
   // console.log(stats);
 
   return (
@@ -67,17 +66,18 @@ const StatsProvince = () => {
         <p>Recovered</p>
         <p>Deaths</p>
       </THead>
-      {stats.map(({ attributes }) => {
-        return (
-          <TBody key={attributes.Kode_Provi}>
-            <ProvName>{attributes.Provinsi}</ProvName>
-            <p>{attributes.Kasus_Posi}</p>
-            <p>{attributes.Kasus_Semb}</p>
-            <p>{attributes.Kasus_Meni}</p>
-          </TBody>
-        );
-        // console.log(attributes.Provinsi);
-      })}
+      {stats &&
+        stats.map(({ attributes }) => {
+          return (
+            <TBody key={attributes.Kode_Provi}>
+              <ProvName>{attributes.Provinsi}</ProvName>
+              <p>{attributes.Kasus_Posi}</p>
+              <p>{attributes.Kasus_Semb}</p>
+              <p>{attributes.Kasus_Meni}</p>
+            </TBody>
+          );
+          // console.log(attributes.Provinsi);
+        })}
     </ProvWrapper>
   );
 };

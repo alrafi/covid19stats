@@ -1,9 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const FooterWrapper = styled.div`
   padding-top: 20px;
-  padding-bottom: 70px;
+  padding-bottom: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
   p {
     text-align: center;
@@ -20,17 +24,12 @@ const Footer = () => {
   return (
     <FooterWrapper>
       <p>
-        #StayAtHome. With{' '}
+        #StayAtHome. With{" "}
         <span role="img" aria-label="love">
           ❤️
-        </span>{' '}
+        </span>{" "}
         by hafisalrafi
       </p>
-      <p>
-        Assets from <a href="https://www.freepik.com/">Freepik</a> &{' '}
-        <a href="https://www.flaticon.com/">Flaticon</a>
-      </p>
-      <p>Data from API @mathdroid</p>
     </FooterWrapper>
   );
 };
